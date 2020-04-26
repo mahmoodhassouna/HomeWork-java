@@ -1,0 +1,35 @@
+Employee
+
+Employee[] employees = {
+
+new Employee(1, "mahmoud", "IT", 800),
+
+new Employee(2, "ahmed", "Sales", 343
+
+new Employee(5, "Hala", "IT",332),
+
+new Employee(7, "akram", "Marketing", 232),
+
+new Employee(4, "raed", "Sales", 1000)
+
+};
+
+List<Employee> listEmployees = Arrays.asList(employees);
+
+listEmployees.stream()
+
+.filter(e-> ( e.getSalary() >=800 && e.getSalary() <1200))//filter out employees with a salary outside rage [800-1200)
+
+.map
+
+(e-> new Employee(e.getId(), e.getName(), e.getDepartment(), e.getSalary()*1.02))//turn every employee object into new employee,
+
+//where the salary is multiplied by 1,02
+
+.collect(Collectors.
+
+groupingBy(Employee::getDepartment,//collect all the employees, group them by their department, and return count of employee in each department
+
+Collectors.counting()))
+
+.forEach((d, c) -> System.out.println("Dept: "+ d + ", Count: " + c));//print the department and the count
