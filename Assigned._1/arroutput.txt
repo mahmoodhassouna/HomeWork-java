@@ -1,0 +1,2 @@
+Student [id=20, name=ali, major=zaanin, grade=3516.0]
+Student [id=10, name=yusef, major=zaanin, grade=1816.5]
